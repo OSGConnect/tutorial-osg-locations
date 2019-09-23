@@ -1,0 +1,20 @@
+# We need the job to run our executable script, with the
+#  input.txt filename as an argument, and to transfer the
+#  relevant input and output files:
+executable = location-wrapper.sh
+transfer_input_files = wn-geoip.tar.gz
+
+# We can specify unique filenames for each job by using
+#  the job's 'process' value.
+error = job.$(Process).error
+output = job.$(Process).output
+log = job.$(Process).log
+
+# The below are good base requirements for first testing jobs on OSG, 
+#  if you don't have a good idea of memory and disk usage.
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 1 GB
+
+# Queue fifty jobs with the above specifications.
+queue 50

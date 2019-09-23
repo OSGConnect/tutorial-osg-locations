@@ -1,29 +1,18 @@
----
-layout: lesson
-root: ../..
-title: Scaling Up
----
-<!-- <div class="objectives" markdown="1">
+[title]: - "Finding OSG Locations"
+[TOC]
 
-#### Objectives
-*   Learn how to write an HTCondor submit script.
-*   Learn how to submit multiple jobs at once with HTCondor.
-*   Visualize how jobs distribute on OSG.
-
--->
-
-### Overview
+## Overview
 
 In this section, we will learn how to quickly submit multiple jobs simultaneously using HTCondor and we will visualize where these jobs run so we can get an idea of where and jobs are distributed on the Open Science Grid.
 
-### Gathering network information from the OSG
+## Gathering network information from the OSG
 
-Now to create a submit file and that will run in the OSG!
+Now to create a submit file that will run in the OSG!
 
-1.  Use the command `cd ..` to move out of the `tutorial-quickstart` folder
-2.  Change into the `scaling-up` directory with `cd scaling-up`
+1.  Use the tutorial command to download the job submission files: `tutorial osg-locations`.
+2.  Change into the `scaling-up` directory with `cd osg-locations`.
 
-### Hostname fetching code
+## Hostname fetching code
 
 The following Python script finds the ClassAd of the machine it's running on and finds a network identity that can be used to perform lookups:
 
@@ -89,7 +78,7 @@ $ condor_submit scalingup.submit
 
 Wait for the results. Remember, you can use `watch condor_q` to monitor the status of your jobs.
 
-### Collating your results
+## Collating your results
 
 Now that you have your results, it's time to summarize them.
 Rather than inspecting each output file individually, you can use the `cat` command 
@@ -108,6 +97,6 @@ Additionally, you can use `cat` in combination with the `sort` and `uniq` comman
 $ cat job.*.output | sort | uniq
 ```
 
-### Mapping your results
+## Mapping your results
 
 To visualize the locations of the machines that your jobs ran on, you will be using http://www.mapcustomizer.com/. Copy and paste the collated results into the text box that pops up when clicking on the 'Bulk Entry' button on the right-hand side. Where did your jobs run?

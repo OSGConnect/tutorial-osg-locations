@@ -10,7 +10,7 @@ In this section, we will learn how to quickly submit multiple jobs simultaneousl
 Now to create a submit file that will run in the OSG!
 
 1.  Use the tutorial command to download the job submission files: `tutorial osg-locations`.
-2.  Change into the `osg-locations` directory with `cd osg-locations`.
+2.  Change into the `tutorial-osg-locations` directory with `cd tutorial-osg-locations`.
 
 ## Hostname fetching code
 

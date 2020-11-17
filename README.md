@@ -46,24 +46,31 @@ The submit file for this job, `scalingup.submit`, is setup to specify these file
 submit **fifty** jobs simultaneously. It also uses the job's `process` value to create unique output, error and log files for each of the job.
 
 	$ cat scalingup.submit
+	
+	# The following requirments ensure we land on compute nodes
+	# which have all the dependencies (modules, so we can 
+	# module load python2.7) and avoid some machines where 
+	# GeoIP does not work (such as Kubernetes containers)
+	requirements = OSG_OS_STRING == "RHEL 7" && HAS_MODULES && GLIDEIN_Gatekeeper =!= UNDEFINED
+	
 	# We need the job to run our executable script, with the
 	#  input.txt filename as an argument, and to transfer the
 	#  relevant input and output files:
-	executable = location_wrapper.sh
+	executable = location-wrapper.sh
 	transfer_input_files = wn-geoip.tar.gz
-
+	
 	# We can specify unique filenames for each job by using
 	#  the job's 'process' value.
 	error = job.$(Process).error
 	output = job.$(Process).output
 	log = job.$(Process).log
-
+	
 	# The below are good base requirements for first testing jobs on OSG, 
 	#  if you don't have a good idea of memory and disk usage.
 	request_cpus = 1
 	request_memory = 1 GB
 	request_disk = 1 GB
-
+	
 	# Queue fifty jobs with the above specifications.
 	queue 50
 

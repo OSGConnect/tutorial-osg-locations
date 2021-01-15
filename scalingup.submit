@@ -23,5 +23,5 @@ request_cpus = 1
 request_memory = 1 GB
 request_disk = 1 GB
 
-# Queue fifty jobs with the above specifications.
-queue 50
+# Queue 100 jobs with the above specifications.
+queue 100

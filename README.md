@@ -71,8 +71,8 @@ submit **fifty** jobs simultaneously. It also uses the job's `process` value to 
 	request_memory = 1 GB
 	request_disk = 1 GB
 	
-	# Queue fifty jobs with the above specifications.
-	queue 50
+	# Queue 100 jobs with the above specifications.
+	queue 100
 
 Submit this job using the `condor_submit` command:
 

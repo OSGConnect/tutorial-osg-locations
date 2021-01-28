@@ -15,7 +15,7 @@ Now to create a submit file that will run in the OSG!
 ## Hostname fetching code
 
 The following Python script finds the ClassAd of the machine it's running on and finds a network identity that can be used to perform lookups:
-file
+
 
 	#!/bin/env python
 
@@ -40,10 +40,10 @@ file
 		except AttributeError:
 			exit(1)
 
-You will be using `location-wrapper.sh` as your executable and `wn-geoip.tar.gz` as an input file.
+This script (`wn-geoip.py`) is contained in the zipped archive (`wn-geoip.tar.gz`) that is transferred to the job and unpacked by the job wrapper script `location-wrapper.sh`.  You will be using `location-wrapper.sh` as your executable and `wn-geoip.tar.gz` as an input file.
 
 The submit file for this job, `scalingup.submit`, is setup to specify these files and
-submit **fifty** jobs simultaneously. It also uses the job's `process` value to create unique output, error and log files for each of the job.
+submit **100** jobs simultaneously. It also uses the job's `process` value to create unique output, error and log files for each of the job.
 
 	$ cat scalingup.submit
 	
@@ -92,7 +92,7 @@ look something like this:
 
 	$ cat job.*.output
 
-The `*` is a wildcard so the above cat command runs on all files that start with `location-` and end in `.out`.
+The `*` is a wildcard so the above `cat` command runs on all files that start with `job-` and end in `.output`.
 Additionally, you can use `cat` in combination with the `sort` and `uniq` commands to print only the unique results:
 
 	$ cat job.*.output | sort | uniq

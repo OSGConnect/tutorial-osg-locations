@@ -92,7 +92,7 @@ look something like this:
 
 	$ cat job.*.output
 
-The `*` is a wildcard so the above cat command runs on all files that start with `job-` and end in `.output`.
+The `*` is a wildcard so the above `cat` command runs on all files that start with `job-` and end in `.output`.
 Additionally, you can use `cat` in combination with the `sort` and `uniq` commands to print only the unique results:
 
 	$ cat job.*.output | sort | uniq

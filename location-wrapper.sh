@@ -5,6 +5,9 @@
     source /cvmfs/oasis.opensciencegrid.org/osg/modules/lmod/current/init/bash && \
     module load python/2.7
 
+# set TMPDIR variable
+export TMPDIR=$_CONDOR_SCRATCH_DIR
+
 # Extract the input file
 tar -xzf wn-geoip.tar.gz
 

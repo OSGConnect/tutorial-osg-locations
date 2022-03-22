@@ -3,7 +3,7 @@
 
 ## Overview
 
-In this section, we will learn how to quickly submit multiple jobs simultaneously using HTCondor and we will visualize where these jobs run so we can get an idea of where and jobs are distributed on the Open Science Grid.
+In this section, we will learn how to quickly submit multiple jobs simultaneously using HTCondor and we will visualize where these jobs run so we can get an idea of where and jobs are distributed on the Open Science Pool.
 
 ## Gathering network information from the OSG
 

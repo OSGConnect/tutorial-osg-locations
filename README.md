@@ -1,7 +1,9 @@
-[title]: - "Finding OSG Locations"
-[TOC]
+---
+ospool:
+    path: htc_workloads/submitting_workloads/tutorial-osg-locations/README.md
+---
 
-## Overview
+# Finding OSG Locations
 
 In this section, we will learn how to quickly submit multiple jobs simultaneously using HTCondor and we will visualize where these jobs run so we can get an idea of where and jobs are distributed on the Open Science Pool.
 
